@@ -4,8 +4,10 @@ import { useState, useEffect } from "react";
 interface Props {
     startDate: Date
     endDate: Date
+    timer: boolean
+    children: React.ReactNode
 }
-const Timer = ({ startDate, endDate }: Props) => {
+const Timer = ({ startDate, endDate, timer, children }: Props) => {
 
     const [totalTime, setTotalTime] = useState(0)
 
@@ -34,12 +36,13 @@ const Timer = ({ startDate, endDate }: Props) => {
 
     return (
         <div className="timer">
-            {totalTime > 0 ? <div>
+            {totalTime > 0 && timer && startDate < today && endDate > today ? <div>
                 {day > 0 ? <span>{day.toString().padStart(2, "0")}:</span> : null}
                 <span>{hour.toString().padStart(2, "0")}:</span>
                 <span>{minutes.toString().padStart(2, "0")}:</span>
                 <span>{seconds.toString().padStart(2, "0")}</span>
             </div> : null}
+            {children}
         </div>
     )
 }

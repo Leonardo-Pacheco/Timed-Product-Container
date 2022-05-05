@@ -10,6 +10,7 @@ const ProductShelf = (Props: ProductShelfProps) => {
     const { product, offerBackgroundColor } = Props
 
     const installmentsValue = (parseFloat(product.price) / parseFloat(product.installments)).toFixed(2)
+    
 
     return (
         <div className="shelf">

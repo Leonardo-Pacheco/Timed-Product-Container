@@ -215,7 +215,7 @@ function App() {
         installments: "3x"
     },
     {
-        offer: true,
+        offer: false,
         offerText: "mega oferta!!",
         page: "https://www.americanas.com.br/produto/134568005?chave=dk_hm_bn_4_6_ge&offerId=5d5fe32af216c95bdea43a01",
         name: "Lavadora de Roupas Electrolux 11 kg Premium Care Branca com 08 Programas de Lavagem e Vapour Care - LFE11",
@@ -229,7 +229,7 @@ function App() {
 
   return (
     <div className="App">
-      <ProductContainer productsData={productsData} startDate={new Date(2022, 4, 3, 14, 30)} endDate={new Date(2022, 4, 5, 18, 50)}/>
+      <ProductContainer timer={true} productsData={productsData} startDate={new Date("2022-04-03T14:30:00")} endDate={new Date("2022-06-05T18:50:00")}/>
     </div>
   );
 }
