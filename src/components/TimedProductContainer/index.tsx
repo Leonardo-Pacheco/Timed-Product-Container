@@ -3,34 +3,47 @@ import ProductShelf from "./ProductShelf";
 import "./styles.css";
 import Timer from "./Timer";
 
-interface TimedProductContainerProps {
-  productsData: ProductData[];
-  startDate: Date;
-  endDate: Date;
-  offerBackgroundColor?: string;
-  timer: boolean;
-}
-
-const TimedProductContainer = (Props: TimedProductContainerProps) => {
-  const { productsData, startDate, endDate, offerBackgroundColor, timer } =
-    Props;
-
+const TimedProductContainer = ({
+  productsData,
+  startDate,
+  endDate,
+  timer,
+  starImg,
+  starAlt,
+  shelfCustomStyle,
+  offerCustomStyle,
+  productImageStyle,
+  productNameStyle,
+  ratingContainerStyle,
+  starRatingStyle,
+  oldPriceStyle,
+  priceStyle,
+  installmentsStyle,
+  timerStyle,
+}: TimedProductContainerProps) => {
   return (
     <div className="container">
-      <Timer startDate={startDate} endDate={endDate} timer={timer}>
-        {" "}
-        <p>texto</p>{" "}
+      <Timer
+        timerStyle={timerStyle}
+        startDate={startDate}
+        endDate={endDate}
+        timer={timer}
+      >
+        <ProductShelf
+          shelfCustomStyle={shelfCustomStyle}
+          offerCustomStyle={offerCustomStyle}
+          productImageStyle={productImageStyle}
+          productNameStyle={productNameStyle}
+          ratingContainerStyle={ratingContainerStyle}
+          starRatingStyle={starRatingStyle}
+          oldPriceStyle={oldPriceStyle}
+          priceStyle={priceStyle}
+          installmentsStyle={installmentsStyle}
+          starAlt={starAlt}
+          starImg={starImg}
+          products={productsData}
+        />
       </Timer>
-      <div className="product-container">
-        {productsData.map((products) => {
-              return (
-                <ProductShelf
-                  product={products}
-                  offerBackgroundColor={offerBackgroundColor}
-                />
-              );
-            })}
-      </div>
     </div>
   );
 };
