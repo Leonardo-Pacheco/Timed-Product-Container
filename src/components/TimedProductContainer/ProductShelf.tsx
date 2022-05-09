@@ -16,7 +16,7 @@ const ProductShelf = ({
 }: ProductShelfProps) => {
   return (
     <div className="product-container">
-      {products.map((product, idx) => {
+      {products?.map((product, idx) => {
         return (
           <div style={shelfCustomStyle} className="shelf" key={idx}>
             {product.offer ? (
@@ -34,7 +34,7 @@ const ProductShelf = ({
               <p style={productNameStyle} className="productName">
                 {product.name}
               </p>
-              {product.rating || product.rating === null ? (
+              {product?.rating || product?.rating === null ? (
                 <div style={ratingContainerStyle} className="stars-container">
                   <img
                     style={starRatingStyle}

@@ -12,7 +12,7 @@ interface ProductData {
 }
 
 interface TimedProductContainerProps {
-    productsData: ProductData[];
+    products: ProductData[];
     startDate: Date;
     endDate: Date;
     timer: boolean;

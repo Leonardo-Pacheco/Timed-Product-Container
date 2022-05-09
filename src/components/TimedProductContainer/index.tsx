@@ -3,8 +3,8 @@ import ProductShelf from "./ProductShelf";
 import "./styles.css";
 import Timer from "./Timer";
 
-const TimedProductContainer = ({
-  productsData,
+const ProductContainer = ({
+  products,
   startDate,
   endDate,
   timer,
@@ -41,11 +41,11 @@ const TimedProductContainer = ({
           installmentsStyle={installmentsStyle}
           starAlt={starAlt}
           starImg={starImg}
-          products={productsData}
+          products={products}
         />
       </Timer>
     </div>
   );
 };
 
-export default TimedProductContainer;
+export default ProductContainer;

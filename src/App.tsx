@@ -127,7 +127,7 @@ function App() {
     <div className="App">
       <ProductContainer
         timer={true}
-        productsData={productsData}
+        products={productsData}
         startDate={new Date("2022-04-03T14:30:00")}
         endDate={new Date("2022-06-05T15:49:00")}
       />
