@@ -129,7 +129,7 @@ function App() {
         timer={true}
         products={productsData}
         startDate={new Date("2022-04-03T14:30:00")}
-        endDate={new Date("2022-06-05T15:49:00")}
+        endDate={new Date(9283019283746)}
       />
     </div>
   );
